@@ -1,0 +1,28 @@
+# This workflow will install npm then run tests.
+
+name: JavaScript Integration Tests
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test_code:
+    runs-on: windows-latest
+
+    steps:
+      - name: Setup repo
+        uses: actions/checkout@v3
+        
+      - name: Setup npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+        
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
