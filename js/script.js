@@ -4,7 +4,7 @@ let month = fulldate.getMonth() + 1;
 let date = fulldate.getDate();
 
 const dayOfTheWeek = (date = new Date()) => {
-    const days = ['Snday', 'Monday', 'Tuesday', 'Wednesday', 'Thrsday', 'Friday', 'Saturday'];
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return days[date.getDay()];
 }
 
